@@ -1,4 +1,4 @@
-profiler
+Profiler
 ========
 
 Basic profile image service
