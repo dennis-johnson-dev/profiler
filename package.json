@@ -1,6 +1,7 @@
 {
   "name": "Profiler",
   "version": "0.0.1",
+  "repository": "http://github.com/songawee/profiler.git",
   "scripts": {
     "start": "node app.js"
   },

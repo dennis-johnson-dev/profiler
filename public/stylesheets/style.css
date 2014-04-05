@@ -1,8 +1,18 @@
 body {
+  font-size: 62.5%;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h4 {
+  margin: 1em 0 .5em 0;
+}
+
 a {
   color: #00B7FF;
+}
+
+input {
+  width: 180px;
+  display: block;
 }

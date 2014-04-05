@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Uploads 
+  a(href="/") Home
+  p Please enter your email address and upload your profile image 
+  
+  h4 E-mail:
+  input(type="text", name="email", placeholder="your@email.com") 
+
+  h4 Image: 
+  input(type="file", name="image")
+
+  h3 Submit:
+  input(type="submit" value="Submit") 
