@@ -13,7 +13,7 @@ exports.response = function(req, res){
       console.log(documents[0]);
       res.jsonp({path: 'http://songawee-profiler.herokuapp.com/image/' + req.params.hemail});
     } else {
-      res.render('not-found', {title: 'Not Found'});
+      res.jsonp({path: 'Not Found'});
     }
   });
 };
