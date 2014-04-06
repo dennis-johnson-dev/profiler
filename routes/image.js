@@ -11,7 +11,7 @@ exports.find = function(req, res){
 };
 
 exports.process = function(req, res){
-  var hashedEmail = md5(req.body.email);
+  var hashedEmail = md5(req.body.email).substring(0, 20);
   res.render('found', {title: 'Profiler', hash: hashedEmail})
 };
 

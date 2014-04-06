@@ -17,7 +17,7 @@ exports.process = function(req, res){
 
   form.parse(req, function(err, fields, files) {
       // Hash the email with md5 hash function
-      var hashedEmail = md5(fields.email[0]); 
+      var hashedEmail = md5(fields.email[0]).substring(0, 20); 
 
       fs.readFile(files.image[0].path, function(err, data) {
         if (err) throw err;
