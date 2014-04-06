@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var upload = require('./routes/upload');
 var image = require('./routes/image');
+var api = require('./routes/api');
 var http = require('http');
 var path = require('path');
 
@@ -36,6 +37,7 @@ app.get('/find', image.find);
 app.get('/profile-image/:image', image.view);
 app.post('/profile-image', image.process);
 app.get('/image/:image', image.response);
+app.get('/api/profile-image/:hemail', api.response);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

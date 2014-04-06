@@ -26,7 +26,6 @@ exports.process = function(req, res){
       res.render('not-found', {title: 'Not Found'});
     }
   });
- 
 };
 
 exports.response = function(req, res){
