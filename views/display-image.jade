@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    li 
+      a(href="/") Home 
+    li
+      a(href="/upload") Upload
+    li
+      a(href="/find") Find 
+  div#wrapper
+    p Enjoy your profile image.
+    a(href='/image/' + hash) 
+      img(src='/image/' + hash)

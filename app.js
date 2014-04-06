@@ -32,9 +32,10 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/upload', upload.form);
 app.post('/upload', upload.process);
-app.get('/profile-image', image.find);
+app.get('/find', image.find);
+app.get('/profile-image/:image', image.view);
 app.post('/profile-image', image.process);
-app.get('/profile-image/:image', image.response);
+app.get('/image/:image', image.response);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

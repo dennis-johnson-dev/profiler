@@ -44,7 +44,7 @@ exports.process = function(req, res){
               fs.unlink(uploadPath);
             } 
           ); 
-          res.render('found', {title: 'Profiler', hash: hashedEmail});
+          res.redirect('/profile-image/' + hashedEmail);
         });
       });
     });

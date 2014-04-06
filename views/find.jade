@@ -2,7 +2,13 @@ extends layout
 
 block content
   h1= title 
-  a(href="/") Home
+  ul
+    li 
+      a(href="/") Home
+    li 
+      a(href="/upload") Upload
+    li
+      a(href="/find") Find 
   p Please enter the email address of the person whose image you wish to find.  
  
   block form
