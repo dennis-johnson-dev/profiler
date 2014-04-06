@@ -5,10 +5,10 @@
 
 var fs = require('fs');
 
-exports.response = function(req, res){
-  res.sendfile("profile-image/" + req.params.image + ".jpg");
+exports.find = function(req, res){
+  res.render('form', {title: 'Images'}); 
 };
 
-exports.find = function(req, res){
-
+exports.response = function(req, res){
+  res.sendfile("profile-image/" + req.params.image + ".jpg");
 };

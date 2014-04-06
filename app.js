@@ -5,7 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
-var upload = require('./routes/upload');
+var form = require('./routes/form');
 var image = require('./routes/image');
 var http = require('http');
 var path = require('path');
@@ -30,8 +30,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/upload', upload.form);
-app.post('/upload', upload.process);
+app.get('/upload', form.upload);
+app.post('/upload', form.process);
+app.get('/profile-image', image.find);
 app.get('/profile-image/:image', image.response);
 
 http.createServer(app).listen(app.get('port'), function(){

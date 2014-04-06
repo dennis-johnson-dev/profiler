@@ -8,7 +8,7 @@ var multiparty = require('multiparty'),
     md5 = require('blueimp-md5').md5,
     im = require('easyimage');
 
-exports.form = function(req, res){
+exports.upload = function(req, res){
   res.render('upload', {title: 'Uploads'});
 };
 

@@ -2,6 +2,7 @@
 // Validation for upload form that checks for empty items
 
 $('form').on('submit', function(e) {
+  // if we are in file mode, do this, else, do that
   var file = $('#file').val().toString();
   // Format email so it can be correctly hashed
   var email = $('#email').val();
