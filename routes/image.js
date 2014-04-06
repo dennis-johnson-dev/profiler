@@ -7,7 +7,7 @@ var fs = require('fs'),
     md5 = require('blueimp-md5').md5;
 
 exports.find = function(req, res){
-  res.render('find', {title: 'Images'}); 
+  res.render('find', {title: 'Images'});
 };
 
 exports.view = function(req, res){

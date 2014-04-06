@@ -1,6 +1,6 @@
 
 /*
- * Upload Form.
+ * Upload page.
  */
 
 var multiparty = require('multiparty'),
@@ -26,6 +26,7 @@ exports.process = function(req, res){
 
         fs.writeFile(uploadPath, data, function(err) {
           if (err) throw err;
+          // Resize and format the image
           im.rescrop(
             {
               src: uploadPath,
@@ -41,10 +42,11 @@ exports.process = function(req, res){
             },
             function(err, image) {
               if (err) throw err;
+              // throwout temp storage
               fs.unlink(uploadPath);
+              res.redirect('/profile-image/' + hashedEmail);
             } 
           ); 
-          res.redirect('/profile-image/' + hashedEmail);
         });
       });
     });
