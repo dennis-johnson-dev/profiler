@@ -19,7 +19,14 @@ exports.view = function(req, res){
 exports.process = function(req, res){
   var hashedEmail = md5(req.body.email).substring(0, 20);
   // Find out if the email is already hashed
-  res.redirect('/profile-image/' + hashedEmail);
+  Image.find({hash: hashedEmail}, function(err, documents){
+    if (documents.length != 0) {
+      res.redirect('/profile-image/' + hashedEmail);
+    } else {
+      res.send("user's email not founds");
+    }
+  });
+ 
 };
 
 exports.response = function(req, res){

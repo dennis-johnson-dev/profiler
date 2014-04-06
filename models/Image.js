@@ -14,7 +14,8 @@ mongoose.connect(mongoUri, function (err, res) {
 
 var schema = new mongoose.Schema({
   email: String,
-  hash: String
+  hash: String,
+  path: String
 });
 
 module.exports = mongoose.model('Image', schema);
