@@ -49,4 +49,6 @@ input {
   background: #206619;
 }
 
-
+#wrapper {
+  margin: 1em 0;
+}

@@ -19,40 +19,33 @@ exports.process = function(req, res){
       // Hash the email with md5 hash function
       var hashedEmail = md5(fields.email[0]); 
 
-      if (typeof(files.image) === 'undefined') {
-        res.send('yo'); 
-      } else {
-        fs.readFile(files.image[0].path, function(err, data) {
+      fs.readFile(files.image[0].path, function(err, data) {
+        if (err) throw err;
+        var imageName = files.image[0].originalFilename;
+        var uploadPath = "profile-image/" + hashedEmail;
 
-          if (err) {
-            res.send('Error'); 
-          };
-
-          var imageName = files.image[0].originalFilename;
-          var uploadPath = "profile-image/" + hashedEmail;
-
-          fs.writeFile(uploadPath, data, function(err) {
-            im.rescrop(
-              {
-                src: uploadPath,
-                dst: uploadPath + '.jpg',
-                width: 100,
-                height: '100^',
-                cropwidth: 100,
-                cropheight: 100,
-                format: 'jpg',
-                quality: 92, 
-                x: 0,
-                y: 0
-              },
-              function(err, image) {
-                if (err) throw err;
-                fs.unlink(uploadPath);
-              } 
-            ); 
-            res.send(hashedEmail);
-          });
+        fs.writeFile(uploadPath, data, function(err) {
+          if (err) throw err;
+          im.rescrop(
+            {
+              src: uploadPath,
+              dst: uploadPath + '.jpg',
+              width: 100,
+              height: '100^',
+              cropwidth: 100,
+              cropheight: 100,
+              format: 'jpg',
+              quality: 92, 
+              x: 0,
+              y: 0
+            },
+            function(err, image) {
+              if (err) throw err;
+              fs.unlink(uploadPath);
+            } 
+          ); 
+          res.render('found', {title: 'Profiler', hash: hashedEmail});
         });
-      }
+      });
     });
 };

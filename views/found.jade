@@ -2,5 +2,9 @@ extends layout
 
 block content
   h1= title
-
-  a(href="/profile-image") Back 
+  a(href="/") Home 
+  div#wrapper
+    p Enjoy your profile image.
+    a(href='/profile-image/' + hash) 
+      img(src='/profile-image/' + hash)
+    a#back(href="/profile-image") Back 

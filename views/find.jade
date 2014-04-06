@@ -6,9 +6,9 @@ block content
   p Please enter the email address of the person whose image you wish to find.  
  
   block form
-  form(method='post', action='/profile-image', enctype='multipart/form-data')
+  form(method='post', action='/profile-image')
 
     label(for='email') Email:
-    input#email(type="text", name="email", placeholder="your@email.com") 
+    input#email(type="text", name="email", placeholder="their@email.com") 
   
     input#submit(type="submit", value="Submit") 
