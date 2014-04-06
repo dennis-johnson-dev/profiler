@@ -3,6 +3,8 @@
  * GET images page.
  */
 
+var Image = require('../models/Image.js');
+
 var fs = require('fs'),
     md5 = require('blueimp-md5').md5;
 
@@ -16,6 +18,7 @@ exports.view = function(req, res){
 
 exports.process = function(req, res){
   var hashedEmail = md5(req.body.email).substring(0, 20);
+  // Find out if the email is already hashed
   res.redirect('/profile-image/' + hashedEmail);
 };
 

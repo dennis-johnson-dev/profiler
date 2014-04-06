@@ -11,6 +11,8 @@
     "multiparty": "*",
     "blueimp-md5": "*",
     "imagemagick": "*",
-    "easyimage": "*"
+    "easyimage": "*",
+    "mongodb": "1.4.0",
+    "mongoose": "3.8.8"
   }
 }
