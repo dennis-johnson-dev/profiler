@@ -50,7 +50,7 @@ exports.process = function(req, res){
 
       fs.writeFile(uploadPath, data, function(err) {
         // Resize and format the image
-        console.log(err);
+        if (err) throw err;
         im.rescrop(
           {
             src: uploadPath,
