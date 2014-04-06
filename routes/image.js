@@ -23,7 +23,7 @@ exports.process = function(req, res){
     if (documents.length != 0) {
       res.redirect('/profile-image/' + hashedEmail);
     } else {
-      res.send("user's email not founds");
+      res.render('not-found', {title: 'Not Found'});
     }
   });
  
