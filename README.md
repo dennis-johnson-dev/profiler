@@ -13,10 +13,20 @@ This app allows you to search for an image associated with that user's email add
 
 ## Api
 
-This app has a really basic api that will let you make a request to the server with a hashed email address and will reply with the path of the associated image. Please read about hashing your images [here](http://en.gravatar.com/site/implement/hash/). The api endpoint is:
+This app has a really basic api that will let you make a request to the server with a hashed email address and will reply with the path of the associated image. Please read about hashing your images [here](http://en.gravatar.com/site/implement/hash/). Also, only a .substring(0, 20) of the full hash is counted. The api endpoint is:
 
 ````
 http://songawee-profiler.herokuapp.com/api/profile-image/***Your hashed email***
 ````
 
 Do not include any file extensions (.jpg, .png, etc.).
+
+## Testing
+
+Run 
+
+````
+$npm test
+````
+
+Only a few basic tests for now.

@@ -10,6 +10,10 @@ a {
   display: inline;
 }
 
+a:active {
+  color: purple;
+}
+
 ul {
   margin: 0;
   padding: 0;
