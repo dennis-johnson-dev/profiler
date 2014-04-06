@@ -2,6 +2,7 @@ body {
   font-size: 62.5%;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
 }
 
 a {

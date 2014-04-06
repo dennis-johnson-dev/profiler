@@ -11,7 +11,7 @@ exports.response = function(req, res){
   Image.find({hash: req.params.hemail}, function(err, documents){
     if (documents.length != 0) {
       console.log(documents[0]);
-      res.jsonp({path: 'http://songawee-profiler.herokuapp' + documents[0].path});
+      res.jsonp({path: 'http://songawee-profiler.herokuapp.com' + documents[0].path});
     } else {
       res.render('not-found', {title: 'Not Found'});
     }

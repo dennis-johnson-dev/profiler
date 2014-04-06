@@ -46,6 +46,7 @@ exports.process = function(req, res){
 
     // Write image to filesystem
     fs.readFile(files.image[0].path, function(err, data) {
+      if (err) throw err;
       var uploadPath = "profile-image/" + hashedEmail;
 
       fs.writeFile(uploadPath, data, function(err) {
