@@ -4,15 +4,43 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-h4 {
-  margin: 1em 0 .5em 0;
-}
-
 a {
   color: #00B7FF;
 }
 
+label {
+  font-weight: 600;
+}
+
 input {
+  margin: 1em 0 1.7em;
   width: 180px;
   display: block;
 }
+
+.error {
+  color: red;
+  font-size: .9em;
+}
+
+#submit {
+  cursor: pointer;
+  margin: 1.7em 0;
+  font-size: 1.2em; 
+  padding: 5px 25px;
+  background: #35b128;
+  border: 0;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  color: #fff;
+}
+
+#submit:hover {
+  background: #206619;
+}
+
+

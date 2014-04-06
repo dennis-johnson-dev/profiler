@@ -3,13 +3,14 @@ extends layout
 block content
   h1 Uploads 
   a(href="/") Home
-  p Please enter your email address and upload your profile image 
+  p Please enter your email address and upload your profile image. 
+
+  form(method='post', action='/upload', enctype='multipart/form-data')
+
+    label(for='email') E-mail:
+    input#email(type="text", name="email", placeholder="your@email.com") 
   
-  h4 E-mail:
-  input(type="text", name="email", placeholder="your@email.com") 
+    label(for='image') Upload profile image: 
+    input#file(type="file", name="image")
 
-  h4 Image: 
-  input(type="file", name="image")
-
-  h3 Submit:
-  input(type="submit" value="Submit") 
+    input#submit(type="submit", value="Submit") 
