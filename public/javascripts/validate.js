@@ -2,15 +2,14 @@
 // Validation for upload form that checks for empty items
 
 $('form').on('submit', function(e) {
-  // if we are in file mode, do this, else, do that
-  var file = $('#file').val().toString();
   // Format email so it can be correctly hashed
   var email = $('#email').val();
   email = $.trim(email).toLowerCase().toString(); 
+
   // Reset input value to be formatted string
   $('#email').val(email); 
 
-  var fileCodes = /.jpg|.JPG|.png|.jpeg|.JPEG/; 
+  // Purge old error msgs
   if ($('.error').length == 1) {
     $('.error').remove(); 
   }
@@ -19,9 +18,15 @@ $('form').on('submit', function(e) {
   if (email == "" || isEmail(email)) {
     e.preventDefault();
     addErrorToDOM('*Please enter a valid e-mail address');
-  } else if (file === "" || !fileCodes.test(file)) {
-    e.preventDefault();
-    addErrorToDOM('*Please enter a valid image file');
+  } 
+
+  if ($('#file').length == 0) {
+    var file = $('#file').val().toString();
+    var fileCodes = /.jpg|.JPG|.png|.jpeg|.JPEG/; 
+    if (file === "" || !fileCodes.test(file)) {
+      e.preventDefault();
+      addErrorToDOM('*Please enter a valid image file');
+    }
   }
 
 });

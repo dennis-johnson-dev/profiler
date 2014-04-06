@@ -3,12 +3,15 @@ extends layout
 block content
   h1= title 
   a(href="/") Home
-  p Please enter the email address of the person whose image you wish to find.  
+  p Please enter your email address and upload your profile image.  
  
   block form
-  form(method='post', action='/profile-image', enctype='multipart/form-data')
+  form(method='post', action='/upload', enctype='multipart/form-data')
 
     label(for='email') Email:
     input#email(type="text", name="email", placeholder="your@email.com") 
   
+    label(for='image') Upload profile image: 
+    input#file(type="file", name="image")
+
     input#submit(type="submit", value="Submit") 
