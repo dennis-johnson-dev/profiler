@@ -46,10 +46,9 @@ exports.process = function(req, res){
 
     // Write image to filesystem
     fs.readFile(files.image[0].path, function(err, data) {
-      var uploadPath = "/profile-image/" + hashedEmail;
+      var uploadPath = "profile-image/" + hashedEmail;
 
       fs.writeFile(uploadPath, data, function(err) {
-        if (err) throw err;
         // Resize and format the image
         im.rescrop(
           {
